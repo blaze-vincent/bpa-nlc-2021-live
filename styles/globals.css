@@ -1,16 +1,151 @@
+:root {
+  --bg: rgb(14,0,56);
+  --primary: white; 
+  --anim-time: 0.25s;
+  font-size: 16px;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--bg);
+  color: var(--primary);
 }
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 * {
   box-sizing: border-box;
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 54rem;
+  margin: auto;
+}
+
+#pic-nav-container {
+  width: 90vw;
+  padding: 0.5rem;
+  height: 15rem;
+  background-color: var(--bg);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#pic-nav-container.scrolled {
+  height: 5rem;
+  transition: var(--anim-time);
+  position: fixed;
+  flex-direction: row-reverse;
+}
+
+#bpa-nlc-logo {
+  display: block;
+  margin: auto;
+  height: 8rem;
+  right: auto;
+  width: auto;
+  transition: var(--anim-time);
+}
+#bpa-nlc-logo.scrolled{
+  margin: 0; margin-left: 0.5rem;
+  height: 4rem;
+  transition: var(--anim-time);
+}
+
+#navbar-compensation {
+  display: block;
+  height: 0;
+  transition: var(--anim-time);
+}
+#navbar-compensation.scrolled {
+  display: block;
+  height: 10rem;
+  transition: var(--anim-time);
+}
+
+h1 {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: 22px;
+  color: white;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 18px;
+}
+
+#navbar {
+  margin-top: 0.5rem; margin-bottom: 0.5rem;
+  display: flex;
+  flex-flow: row;
+  width: 15rem;
+  justify-content: space-evenly;
+}
+#navbar a {
+  text-decoration: underline;
+}
+
+hr {
+  width: 90%;
+  max-width: 30rem;
+}
+
+#transportation-card-deck {
+  margin: 0 2rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.transportation-card {
+  display: flex;
+  width: min-content;
+  height: max-content;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.transportation-card img {
+  width: 10rem;
+}
+.transportation-card h3 {
+  margin: auto;
+}
+.transportation-card p {
+  margin: 0;
+}
+
+@media only screen and (min-width: 450px) {
+
+  #transportation-card-deck {
+    display: grid;
+    gap: 2rem;
+    max-width: 60rem;
+    margin: auto;
+    grid-template-rows: 3rem, 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  #transportation-card-deck > h2, #transportation-card-deck > :nth-child(6) {
+    grid-column: 1 / 3;
+  }
+
+  .transportation-card {
+    margin: 0;
+  }
 }
