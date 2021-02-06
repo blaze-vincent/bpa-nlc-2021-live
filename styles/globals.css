@@ -104,14 +104,14 @@ hr {
   max-width: 30rem;
 }
 
-#transportation-card-deck {
+.card-deck {
   margin: 0 2rem 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.transportation-card {
+.card {
   display: flex;
   width: min-content;
   height: max-content;
@@ -120,19 +120,19 @@ hr {
   text-align: center;
   margin-bottom: 1rem;
 }
-.transportation-card img {
+.card img {
   width: 10rem;
 }
-.transportation-card h3 {
+.card h3 {
   margin: auto;
 }
-.transportation-card p {
+.card p {
   margin: 0;
 }
 
 @media only screen and (min-width: 450px) {
 
-  #transportation-card-deck {
+  .card-deck {
     display: grid;
     gap: 2rem;
     max-width: 60rem;
@@ -141,11 +141,11 @@ hr {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }
-  #transportation-card-deck > h2, #transportation-card-deck > :nth-child(6) {
+  .card-deck > h2, .card-deck > :nth-child(6) {
     grid-column: 1 / 3;
   }
 
-  .transportation-card {
+  .card {
     margin: 0;
   }
 }
