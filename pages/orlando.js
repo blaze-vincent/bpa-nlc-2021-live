@@ -128,12 +128,37 @@ export default function Orlando(){
       ]
     }
   ]
+  const attractions = [
+    {
+      title: 'Universal Orlando Resort',
+      img: '/amusementpark.svg',
+      description: "Roughly 20 minutes from the Disney resorts is Universal Orlando Resort, where rides and events based on famous Universal movies can be enjoyed.",
+      links: [
+        {
+          name: "Universal Orlando",
+          url: "https://www.universalorlando.com/web/en/us/theme-parks/universal-studios-florida"
+        }
+      ]
+    },
+    {
+      title: 'Seaworld Orlando',
+      img: '/fishbowl.svg',
+      description: "Seaworld Orlando is located about 15 minutes from the Disney Resorts, where rides and aquariums among other attractions can be toured.",
+      links: [
+        {
+          name: "Seaworld Orlando",
+          url: "https://seaworld.com/orlando/"
+        }
+      ]
+    }
+  ]
 
   return (<div id="orlando-container">
     <Layout>
       <CardDeck title="Transportation" cardsInfo={transportationMethods} />
       <CardDeck title="Food" cardsInfo={dineries} />
       <CardDeck title="Groceries" cardsInfo={groceryStores} />
+      <CardDeck title="Attractions" cardsInfo={attractions} />
     </Layout>
   </div>)
 }

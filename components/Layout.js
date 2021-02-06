@@ -6,9 +6,9 @@ export default function Layout(props){
 
     const [nlcBpaPicSrc, nlcPicSrc] = ["/nlc2021logo.png", "/nlctheme.png"];
     let [logoPic, setLogoPic] = useState(nlcBpaPicSrc);
+    let logoPicAsync = nlcBpaPicSrc;
 
     let ticking;
-    let navbarHeight = 1;
 
     const onScroll = () => {
         const elementsModifiedOnScroll = [
@@ -16,12 +16,14 @@ export default function Layout(props){
             document.querySelector("#bpa-nlc-logo"),
             document.querySelector("#navbar-compensation")
         ]
-        if(window.scrollY > 50){
+        if(window.scrollY > 40 && logoPicAsync === nlcBpaPicSrc){
             setLogoPic(nlcPicSrc);
+            logoPicAsync = nlcPicSrc;
             elementsModifiedOnScroll.forEach(element => {element.className = "scrolled"});
         } else
-        if(window.scrollY < 50){
+        if(window.scrollY < 40 && logoPicAsync === nlcPicSrc){
             setLogoPic(nlcBpaPicSrc);
+            logoPicAsync = nlcBpaPicSrc;
             elementsModifiedOnScroll.forEach(element => {element.className = ""});
         }
     }
