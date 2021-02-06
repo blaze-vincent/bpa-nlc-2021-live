@@ -8,6 +8,7 @@ export default function Layout(props){
     let [logoPic, setLogoPic] = useState(nlcBpaPicSrc);
 
     let ticking;
+    let navbarHeight = 1;
 
     const onScroll = () => {
         const elementsModifiedOnScroll = [
@@ -15,7 +16,6 @@ export default function Layout(props){
             document.querySelector("#bpa-nlc-logo"),
             document.querySelector("#navbar-compensation")
         ]
-
         if(window.scrollY > 50){
             setLogoPic(nlcPicSrc);
             elementsModifiedOnScroll.forEach(element => {element.className = "scrolled"});
@@ -25,6 +25,7 @@ export default function Layout(props){
             elementsModifiedOnScroll.forEach(element => {element.className = ""});
         }
     }
+
     useEffect(
         () => {
             window.addEventListener('scroll', () => {

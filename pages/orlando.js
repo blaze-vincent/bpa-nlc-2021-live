@@ -5,7 +5,7 @@ export default function Orlando(){
 
   const transportationMethods = [
     {
-      title: 'Walk',
+      title: 'Foot Traffic',
       img: '/walk.svg',
       description: 'A pedestrian bridge facilitates foot travel to Disney Springs Marketplace from the Saratoga resort.',
       links: [
@@ -16,7 +16,7 @@ export default function Orlando(){
     ]
     },
     {
-      title: 'Bike',
+      title: 'Bike Share',
       img: '/bicycle.svg',
       description: 'Evolve Bicycles provides bike rental services for Disney’s Saratoga Spring Resort guests.',
       links: [
@@ -66,13 +66,74 @@ export default function Orlando(){
             url: "https://www.lyft.com/"
         }
         ]
+    },
+    {
+      title: 'Disney Monorail',
+      img: '/monorail.svg',
+      description: "Two monorails located around the Disney resorts offer free transportation to a number of points of interest.",
+      links: [
+        {
+          name: "Disney Monorail",
+          url: "https://disneyworld.disney.go.com/guest-services/monorail-transportation/"
+        }
+      ]
     }
   ];
+
+  const dineries = [
+    {
+      title: 'Applebees',
+      img: '/breakfast.svg',
+      description: "Applebees provides familiar food with curbside options within 10 minutes of Saratoga Springs.",
+      links: [
+        {
+          name: "Applebees",
+          url: "https://www.applebees.com/en"
+        }
+      ]
+    },
+    {
+      title: 'Dave & Busters',
+      img: '/arcade.svg',
+      description: "Dave & Busters serves dining needs as well as games and social events near Disney resorts.",
+      links: [
+        {
+          name: "Dave & Busters",
+          url: "https://www.daveandbusters.com/"
+        }
+      ]
+    }
+  ]
+  const groceryStores = [
+    {
+      title: 'ALDI',
+      img: '/groceries.svg',
+      description: "ALDI offers groceries at low prices with curbside pickup and delivery options.",
+      links: [
+        {
+          name: "ALDI",
+          url: "https://www.aldi.us/en/"
+        }
+      ]
+    },
+    {
+      title: 'Walmart',
+      img: '/groceriesmobile.svg',
+      description: "Within 10 minutes of Saratoga Springs is a Walmart Supercenter with a wide selection of groceries available for pickup or delivery.",
+      links: [
+        {
+          name: "Walmart",
+          url: "https://www.walmart.com/"
+        }
+      ]
+    }
+  ]
 
   return (<div id="orlando-container">
     <Layout>
       <CardDeck title="Transportation" cardsInfo={transportationMethods} />
-      <CardDeck title="Food" cardsInfo={[]} />
+      <CardDeck title="Food" cardsInfo={dineries} />
+      <CardDeck title="Groceries" cardsInfo={groceryStores} />
     </Layout>
   </div>)
 }
